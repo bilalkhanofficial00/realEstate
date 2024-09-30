@@ -16,7 +16,7 @@ export function Home() {
     return (
 
         <>
-        <Navbar/>
+        {/* <Navbar/> */}
         <HomeSec1/>
         <HomeSec2/>
         <HomeSec3/>
