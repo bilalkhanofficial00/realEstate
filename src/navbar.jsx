@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import logo from './images/Nav/NavL.png';
 import Facebook from './images/Nav/F.png';
@@ -55,13 +56,13 @@ export function Navbar() {
 
                 {/* Mobile Menu */}
                 <div
-                    className={`${isMenuOpen ? "block" : "hidden"} lg:hidden absolute top-16 left-0 right-0 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-600 text-white z-20 p-6 transition-transform transform ${isMenuOpen ? 'scale-y-100' : 'scale-y-0'} origin-top`}
+                    className={`${isMenuOpen ? "block" : "hidden"} lg:hidden absolute md:text-2xl md:top-20 top-20 left-0 right-0 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-600 text-white z-20 p-6 transition-transform transform ${isMenuOpen ? 'scale-y-100' : 'scale-y-0'} origin-topp`}
                 >
                     <ul className="flex flex-col space-y-6">
                         {["Solutions", "Products", "Company"].map((item) => (
                             <li
                                 key={item}
-                                className="cursor-pointer hover:text-blue-400 flex items-center relative"
+                                className="cursor-pointer  text-white flex items-center relative"
                                 onClick={() => toggleDropdown(item)}
                             >
                                 {item}
@@ -70,7 +71,7 @@ export function Navbar() {
                                     aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="none"
-                                    viewBox="0 0 10 6"
+                                    viewBox="0 5 10 6"
                                     style={{
                                         transform: isDropdownOpen[item] ? "rotate(180deg)" : "rotate(0deg)",
                                     }}
@@ -79,9 +80,9 @@ export function Navbar() {
                                 </svg>
                                 {/* Dropdown Menu for Mobile */}
                                 {isDropdownOpen[item] && (
-                                    <ul className=" absolute left-0 top-full mt-2 bg-gradient-to-br from-blue-50 to-blue-100 text-black shadow-lg p-4 space-y-2 rounded-lg transition-all duration-300 ease-in-out z-20">
+                                    <ul style={{ width: "max-content" }} className=" absolute left-0 top-full mt-2  bg-white divide-y divide-gray-100 rounded-lg z-30 shadow w-44 dark:bg-gray-700 origin-top">
                                         {submenuItems[item].map((submenu, index) => (
-                                            <li key={index} className="cursor-pointer   hover:text-blue-600  transition-colors duration-200">
+                                            <li key={index} className="cursor-pointer   block px-4 py-2 hover:bg-gray-100  text-black">
                                                 <Link to={submenu.link}>{submenu.name}</Link>
                                             </li>
                                         ))}
@@ -106,7 +107,7 @@ export function Navbar() {
                     {["Solutions", "Products", "Company"].map((item) => (
                         <li
                             key={item}
-                            className="relative group cursor-pointer hover:text-blue-600 flex items-center"
+                            className="relative group cursor-pointer  flex items-center"
                             onClick={() => toggleDropdown(item)}
                         >
                             {item}
@@ -124,9 +125,9 @@ export function Navbar() {
                             </svg>
                             {/* Dropdown Menu for Desktop */}
                             {isDropdownOpen[item] && (
-                                <ul style={{ width: "max-content" }} className="absolute left-0 top-full mt-2  bg-gradient-to-br from-blue-50 to-blue-100 text-black shadow-lg p-4 lg:p-8 space-y-3 rounded-lg duration-800 border-2 border-red-600 origin-top z-20">
+                                <ul style={{ width: "max-content" }} className="absolute left-0 top-full mt-2  bg-white divide-y divide-gray-100 rounded-lg z-30 shadow w-44 dark:bg-gray-700 origin-top ">
                                     {submenuItems[item].map((submenu, index) => (
-                                        <li key={index} className="cursor-pointer hover:bg-black hover:text-white px-8 py-2 text-center  font-sans   transition-colors duration-200">
+                                        <li key={index} className="block px-4 py-2 hover:bg-gray-100  font-medium text-black ">
                                             <Link to={submenu.link}>{submenu.name}</Link>
                                         </li>
                                     ))}

@@ -12,6 +12,7 @@ import { Footer } from "./footer";
 
 
 
+
 export function Home() {
     return (
 
@@ -25,6 +26,7 @@ export function Home() {
         <HomeSec6 />
         <HomeSec7/>
         <Footer/>
+       
      
         
         
